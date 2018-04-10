@@ -1,13 +1,13 @@
-# htaccess /home1/hermanyu/public_html/manjardeoro/.htaccess
-# Fecha de modificacion:11 09 2017 16:09:09
+# htaccess /Applications/XAMPP/xamppfiles/htdocs/server/socialduo/.htaccess
+# Fecha de modificacion:05 04 2018 04:04:07
 #
 Options -Indexes
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 #
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^www.manjardeoro.wappcom.com [NC]
-RewriteRule ^(.*)$ http://manjardeoro.wappcom.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^http://localhost/server/socialduo/ [NC]
+RewriteRule ^(.*)$ http://localhost/server/socialduo/$1 [L,R=301]
 #
 RewriteCond %{QUERY_STRING} (;|<|>|’|”|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*(/\*|union|select|insert|query|cast|set|declare|drop|update|md5|benchmark) [NC,OR]
 RewriteCond %{QUERY_STRING} \.\./\.\. [OR]
@@ -55,41 +55,41 @@ RewriteCond %{REQUEST_FILENAME} -f
 #
 <IfModule mod_alias.c>
           RedirectMatch 403 (?i)([a-z0-9]{2000})
-          RedirectMatch 403 (?i)(https?|ftp|php):/
-          RedirectMatch 403 (?i)(base64_encode)(.*)(\()
-          RedirectMatch 403 (?i)(=\\'|=\\%27|/\\'/?)\.
-          RedirectMatch 403 (?i)/(\$(\&)?|\*|"|\.|,|&|&amp;?)/?$
-          RedirectMatch 403 (?i)(\{0\}|\(/\(|\.\.\.|\+\+\+|\"\")
-          RedirectMatch 403 (?i)(~|`|<|>|:|;|,|%|\|\s|\{|\}|\[|\]|\|)
-          RedirectMatch 403 (?i)/(=|$&|_mm|cgi-|etc/passwd|muieblack)
-          RedirectMatch 403 (?i)(&pws=0|_vti_|\(null\)|\{$itemURL\}|echo(.*)kae|etc/passwd|eval\(|self/environ)
-          RedirectMatch 403 (?i)\.(aspx?|bash|bak?|cfg|cgi|dll|exe|git|hg|ini|jsp|log|mdb|out|sql|svn|swp|tar|rar|rdf)$
+        	RedirectMatch 403 (?i)(https?|ftp|php):/
+        	RedirectMatch 403 (?i)(base64_encode)(.*)(\()
+        	RedirectMatch 403 (?i)(=\\'|=\\%27|/\\'/?)\.
+        	RedirectMatch 403 (?i)/(\$(\&)?|\*|"|\.|,|&|&amp;?)/?$
+        	RedirectMatch 403 (?i)(\{0\}|\(/\(|\.\.\.|\+\+\+|\"\")
+        	RedirectMatch 403 (?i)(~|`|<|>|:|;|,|%|\|\s|\{|\}|\[|\]|\|)
+        	RedirectMatch 403 (?i)/(=|$&|_mm|cgi-|etc/passwd|muieblack)
+        	RedirectMatch 403 (?i)(&pws=0|_vti_|\(null\)|\{$itemURL\}|echo(.*)kae|etc/passwd|eval\(|self/environ)
+        	RedirectMatch 403 (?i)\.(aspx?|bash|bak?|cfg|cgi|dll|exe|git|hg|ini|jsp|log|mdb|out|sql|svn|swp|tar|rar|rdf)$
           RedirectMatch 403 (?i)/(^$|(wp-)?config|mobiquo|phpinfo|shell|sqlpatch|thumb|thumb_editor|thumbopen|timthumb|webshell)\.php
-          RedirectMatch 403 (?i)\.(^$|(.*)query|union|select|insert|query|cast|set|declare|drop|update|md5|benchmark|config|mobiquo|phpinfo|shell|sqlpatch|thumb|thumb_editor|thumbopen|timthumb|webshell)\.*
-          RedirectMatch 403 (?i)\.(^$|wp-config)\.*</IfModule>
+        	RedirectMatch 403 (?i)\.(^$|(.*)query|union|select|insert|query|cast|set|declare|drop|update|md5|benchmark|config|mobiquo|phpinfo|shell|sqlpatch|thumb|thumb_editor|thumbopen|timthumb|webshell)\.*
+        	RedirectMatch 403 (?i)\.(^$|wp-config)\.*</IfModule>
 #
 <IfModule mod_setenvif.c>
-  SetEnvIfNoCase User-Agent ([a-z0-9]{2000}) bad_bot
-  SetEnvIfNoCase User-Agent (archive.org|binlar|casper|checkpriv|choppy|clshttp|cmsworld|diavol|dotbot|extract|feedfinder|flicky|g00g1e|harvest|heritrix|httrack|kmccrew|loader|miner|nikto|nutch|planetwork|postrank|purebot|pycurl|python|seekerspider|siclab|skygrid|sqlmap|sucker|turnit|vikspider|winhttp|xxxyy|youda|zmeu|zune) bad_bot
+	SetEnvIfNoCase User-Agent ([a-z0-9]{2000}) bad_bot
+	SetEnvIfNoCase User-Agent (archive.org|binlar|casper|checkpriv|choppy|clshttp|cmsworld|diavol|dotbot|extract|feedfinder|flicky|g00g1e|harvest|heritrix|httrack|kmccrew|loader|miner|nikto|nutch|planetwork|postrank|purebot|pycurl|python|seekerspider|siclab|skygrid|sqlmap|sucker|turnit|vikspider|winhttp|xxxyy|youda|zmeu|zune) bad_bot
 <limit GET POST PUT>
-    Order Allow,Deny
-    Allow from All
-    Deny from env=bad_bot
-  </limit>
+		Order Allow,Deny
+		Allow from All
+		Deny from env=bad_bot
+	</limit>
 </IfModule>
 #
 <Limit GET HEAD OPTIONS POST PUT>
-  Order Allow,Deny
-  Allow from All
-  # uncomment/edit/repeat next line to block IPs
-  # Deny from 123.456.789
+	Order Allow,Deny
+	Allow from All
+	# uncomment/edit/repeat next line to block IPs
+	# Deny from 123.456.789
 </Limit>
 #
 RewriteRule (.*\.php)s$ $1 [H=application/x-httpd-php-source]
 #
 <IfModule mod_headers.c>
     <FilesMatch "\.(eot|font.css|otf|ttc|ttf|woff|woff2)$">
-        Header set Access-Control-Allow-Origin "*"
+        Header set Access-Control-Allow-Origin "*" 
     </FilesMatch>
 </IfModule>
 <IfModule mod_mime.c>
@@ -107,7 +107,7 @@ AddEncoding gzip svgz
  <FilesMatch ".(gif|jpg|jpeg|png|swf|woff|svg)$">
  # 2 weeks
  ExpiresDefault A604800
- Header append Cache-Control "public"
+ Header append Cache-Control "public" 
  </FilesMatch>
  <FilesMatch ".(xml|txt|html)$">
  # 2 hours
@@ -125,56 +125,72 @@ Rewriterule ^dashboard$  dashboard.php
 Rewriterule ^dashboard/([^/]*)$   dashboard.php?m=$1
 Rewriterule ^dashboard/([^/]*)/([0-9]*)$   dashboard.php?m=$1&cat=$2
 Rewriterule ^dashboard/([^/]*)/([^/]*)-catg$   dashboard.php?m=$1&catg=$2
+Rewriterule ^dashboard/webapp/([^/]*)$   dashboard.php?app=$1
+Rewriterule ^dashboard/webapp/([^/]*)/([^/]*)$   dashboard.php?app=$1&accion=$2
 Rewriterule ^login$  login.php
 Rewriterule ^logout$  logout.php
 Rewriterule ^forgot$  forgot.php
 Rewriterule ^buscar/([^/]*)$  index.php?cat=1&pla=2&q=$1
 Rewriterule ^portada$  index.php?cat=1&pla=1
-Rewriterule ^portada/p=([0-9]+)$  index.php?cat=1&pla=$1
+Rewriterule ^portada#([^/]*)$  index.php?cat=1&pla=1#$1
+Rewriterule ^portada/p=([0-9]+)([^/]*)$  index.php?cat=1&pla=$1$2
 Rewriterule ^portada/pag=([0-9]+)$  index.php?cat=1&pla=1&pag=$1
 Rewriterule ^portada/([^/]*).html$  index.php?cat=1&pla=3&nota=$1
 Rewriterule ^portada/prod=([0-9]+)$  index.php?cat=1&pla=1&prod=$1
 Rewriterule ^portada/([^/]*).prod$  index.php?cat=1&pla=3&ra_prod=$1
+Rewriterule ^portada/([^/]*)-catg$  index.php?cat=1&pla=2&catg=$1
 Rewriterule ^portada/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=1&pla=1&prod=$1&ruta=$2
-Rewriterule ^apps$  index.php?cat=2&pla=1
-Rewriterule ^apps/p=([0-9]+)$  index.php?cat=2&pla=$1
-Rewriterule ^apps/pag=([0-9]+)$  index.php?cat=2&pla=1&pag=$1
-Rewriterule ^apps/([^/]*).html$  index.php?cat=2&pla=3&nota=$1
-Rewriterule ^apps/prod=([0-9]+)$  index.php?cat=2&pla=1&prod=$1
-Rewriterule ^apps/([^/]*).prod$  index.php?cat=2&pla=3&ra_prod=$1
-Rewriterule ^apps/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=2&pla=1&prod=$1&ruta=$2
+Rewriterule ^como-funciona$  index.php?cat=2&pla=1
+Rewriterule ^como-funciona#([^/]*)$  index.php?cat=2&pla=1#$1
+Rewriterule ^como-funciona/p=([0-9]+)([^/]*)$  index.php?cat=2&pla=$1$2
+Rewriterule ^como-funciona/pag=([0-9]+)$  index.php?cat=2&pla=1&pag=$1
+Rewriterule ^como-funciona/([^/]*).html$  index.php?cat=2&pla=3&nota=$1
+Rewriterule ^como-funciona/prod=([0-9]+)$  index.php?cat=2&pla=1&prod=$1
+Rewriterule ^como-funciona/([^/]*).prod$  index.php?cat=2&pla=3&ra_prod=$1
+Rewriterule ^como-funciona/([^/]*)-catg$  index.php?cat=2&pla=2&catg=$1
+Rewriterule ^como-funciona/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=2&pla=1&prod=$1&ruta=$2
 Rewriterule ^blog$  index.php?cat=3&pla=1
-Rewriterule ^blog/p=([0-9]+)$  index.php?cat=3&pla=$1
+Rewriterule ^blog#([^/]*)$  index.php?cat=3&pla=1#$1
+Rewriterule ^blog/p=([0-9]+)([^/]*)$  index.php?cat=3&pla=$1$2
 Rewriterule ^blog/pag=([0-9]+)$  index.php?cat=3&pla=1&pag=$1
 Rewriterule ^blog/([^/]*).html$  index.php?cat=3&pla=3&nota=$1
 Rewriterule ^blog/prod=([0-9]+)$  index.php?cat=3&pla=1&prod=$1
 Rewriterule ^blog/([^/]*).prod$  index.php?cat=3&pla=3&ra_prod=$1
+Rewriterule ^blog/([^/]*)-catg$  index.php?cat=3&pla=2&catg=$1
 Rewriterule ^blog/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=3&pla=1&prod=$1&ruta=$2
-Rewriterule ^precios$  index.php?cat=4&pla=1
-Rewriterule ^precios/p=([0-9]+)$  index.php?cat=4&pla=$1
-Rewriterule ^precios/pag=([0-9]+)$  index.php?cat=4&pla=1&pag=$1
-Rewriterule ^precios/([^/]*).html$  index.php?cat=4&pla=3&nota=$1
-Rewriterule ^precios/prod=([0-9]+)$  index.php?cat=4&pla=1&prod=$1
-Rewriterule ^precios/([^/]*).prod$  index.php?cat=4&pla=3&ra_prod=$1
-Rewriterule ^precios/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=4&pla=1&prod=$1&ruta=$2
-Rewriterule ^documentacin$  index.php?cat=5&pla=1
-Rewriterule ^documentacin/p=([0-9]+)$  index.php?cat=5&pla=$1
-Rewriterule ^documentacin/pag=([0-9]+)$  index.php?cat=5&pla=1&pag=$1
-Rewriterule ^documentacin/([^/]*).html$  index.php?cat=5&pla=3&nota=$1
-Rewriterule ^documentacin/prod=([0-9]+)$  index.php?cat=5&pla=1&prod=$1
-Rewriterule ^documentacin/([^/]*).prod$  index.php?cat=5&pla=3&ra_prod=$1
-Rewriterule ^documentacin/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=5&pla=1&prod=$1&ruta=$2
-Rewriterule ^contacto$  index.php?cat=7&pla=1
-Rewriterule ^contacto/p=([0-9]+)$  index.php?cat=7&pla=$1
-Rewriterule ^contacto/pag=([0-9]+)$  index.php?cat=7&pla=1&pag=$1
-Rewriterule ^contacto/([^/]*).html$  index.php?cat=7&pla=3&nota=$1
-Rewriterule ^contacto/prod=([0-9]+)$  index.php?cat=7&pla=1&prod=$1
-Rewriterule ^contacto/([^/]*).prod$  index.php?cat=7&pla=3&ra_prod=$1
-Rewriterule ^contacto/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=7&pla=1&prod=$1&ruta=$2
-Rewriterule ^soporte$  index.php?cat=8&pla=1
-Rewriterule ^soporte/p=([0-9]+)$  index.php?cat=8&pla=$1
-Rewriterule ^soporte/pag=([0-9]+)$  index.php?cat=8&pla=1&pag=$1
-Rewriterule ^soporte/([^/]*).html$  index.php?cat=8&pla=3&nota=$1
-Rewriterule ^soporte/prod=([0-9]+)$  index.php?cat=8&pla=1&prod=$1
-Rewriterule ^soporte/([^/]*).prod$  index.php?cat=8&pla=3&ra_prod=$1
-Rewriterule ^soporte/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=8&pla=1&prod=$1&ruta=$2
+Rewriterule ^servicio-al-cliente$  index.php?cat=4&pla=1
+Rewriterule ^servicio-al-cliente#([^/]*)$  index.php?cat=4&pla=1#$1
+Rewriterule ^servicio-al-cliente/p=([0-9]+)([^/]*)$  index.php?cat=4&pla=$1$2
+Rewriterule ^servicio-al-cliente/pag=([0-9]+)$  index.php?cat=4&pla=1&pag=$1
+Rewriterule ^servicio-al-cliente/([^/]*).html$  index.php?cat=4&pla=3&nota=$1
+Rewriterule ^servicio-al-cliente/prod=([0-9]+)$  index.php?cat=4&pla=1&prod=$1
+Rewriterule ^servicio-al-cliente/([^/]*).prod$  index.php?cat=4&pla=3&ra_prod=$1
+Rewriterule ^servicio-al-cliente/([^/]*)-catg$  index.php?cat=4&pla=2&catg=$1
+Rewriterule ^servicio-al-cliente/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=4&pla=1&prod=$1&ruta=$2
+Rewriterule ^iniciar-sesion$  index.php?cat=5&pla=1
+Rewriterule ^iniciar-sesion#([^/]*)$  index.php?cat=5&pla=1#$1
+Rewriterule ^iniciar-sesion/p=([0-9]+)([^/]*)$  index.php?cat=5&pla=$1$2
+Rewriterule ^iniciar-sesion/pag=([0-9]+)$  index.php?cat=5&pla=1&pag=$1
+Rewriterule ^iniciar-sesion/([^/]*).html$  index.php?cat=5&pla=3&nota=$1
+Rewriterule ^iniciar-sesion/prod=([0-9]+)$  index.php?cat=5&pla=1&prod=$1
+Rewriterule ^iniciar-sesion/([^/]*).prod$  index.php?cat=5&pla=3&ra_prod=$1
+Rewriterule ^iniciar-sesion/([^/]*)-catg$  index.php?cat=5&pla=2&catg=$1
+Rewriterule ^iniciar-sesion/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=5&pla=1&prod=$1&ruta=$2
+Rewriterule ^elige-un-equipo$  index.php?cat=7&pla=1
+Rewriterule ^elige-un-equipo#([^/]*)$  index.php?cat=7&pla=1#$1
+Rewriterule ^elige-un-equipo/p=([0-9]+)([^/]*)$  index.php?cat=7&pla=$1$2
+Rewriterule ^elige-un-equipo/pag=([0-9]+)$  index.php?cat=7&pla=1&pag=$1
+Rewriterule ^elige-un-equipo/([^/]*).html$  index.php?cat=7&pla=3&nota=$1
+Rewriterule ^elige-un-equipo/prod=([0-9]+)$  index.php?cat=7&pla=1&prod=$1
+Rewriterule ^elige-un-equipo/([^/]*).prod$  index.php?cat=7&pla=3&ra_prod=$1
+Rewriterule ^elige-un-equipo/([^/]*)-catg$  index.php?cat=7&pla=2&catg=$1
+Rewriterule ^elige-un-equipo/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=7&pla=1&prod=$1&ruta=$2
+Rewriterule ^registrate$  index.php?cat=8&pla=1
+Rewriterule ^registrate#([^/]*)$  index.php?cat=8&pla=1#$1
+Rewriterule ^registrate/p=([0-9]+)([^/]*)$  index.php?cat=8&pla=$1$2
+Rewriterule ^registrate/pag=([0-9]+)$  index.php?cat=8&pla=1&pag=$1
+Rewriterule ^registrate/([^/]*).html$  index.php?cat=8&pla=3&nota=$1
+Rewriterule ^registrate/prod=([0-9]+)$  index.php?cat=8&pla=1&prod=$1
+Rewriterule ^registrate/([^/]*).prod$  index.php?cat=8&pla=3&ra_prod=$1
+Rewriterule ^registrate/([^/]*)-catg$  index.php?cat=8&pla=2&catg=$1
+Rewriterule ^registrate/prod=([0-9]+)&ruta=([^/]*)$  index.php?cat=8&pla=1&prod=$1&ruta=$2

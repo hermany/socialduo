@@ -6,24 +6,28 @@
   height: auto !important;
   display: inline-block;
   position: fixed;
+  background: @blanco;
+  box-shadow: 0 1px 6px rgba(57, 73, 76, .35);
   padding: 0;
   top: 0;
   left: 0;
 
   .nav-brand {
     width: 150px;
-    height: 90px;
-    margin: 20px 0;
+    height: 50px;
+    margin: 10px 0;
     float: left;
-    background: url(../images/logo.svg)no-repeat center center;
+    background: url(../images/logo.svg) no-repeat center center;
+    background-size: 140px;
   }
 
   .nav-inner {
     position: relative;
     display: inline-block;
     float: right;
-    margin: 20px 0;
+    text-align: right;
     width: 80%;
+    margin-top: 18px;
 
     #btn-m1 {
       display: none;
@@ -31,13 +35,177 @@
 
     >li {
       position: relative;
-      float: left;
+      /* float: left; */
+      display: inline-block;
       list-style-type: none;
 
       >a {
-        padding: 10px 20px;
+        padding: 10px 15px 9px 15px;
         display: inline-block;
-        font-size: 12px;
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.15em;
+        border: 1px solid transparent;
+        color: @gris-1;
+        border-radius: 5px !important;
+      }
+    }
+
+    #btn-m7 {
+
+      a {
+        background: @naranja;
+        border-bottom-color: @naranja-2;
+        text-decoration: none;
+        color: @blanco;
+        &:hover {
+          background: @naranja-2;
+        }
+      }
+    }
+  }
+}
+
+.pub-presentacion {
+  width: 100%;
+  height: 600px;
+  display: inline-block;
+  margin-top: 70px;
+  background-size: cover !important;
+  background-position: top right !important;
+
+  .pub-inner {
+
+    .mensaje {
+      width: 60%; // border: 1px solid;
+      margin-top: 100px;
+
+      img {
+        width: 140px;
+      }
+
+      .leyenda {
+        margin-top: 10px;
+        margin-left: 15px;
+        font-size: 50px;
+        width: 80%;
+        display: block;
+        line-height: 50px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+      }
+
+      .group {
+        width: 90%;
+        margin-left: 17px;
+        margin-top: 20px;
+        display: block;
+        float: left;
+        .buscar {
+          border: 1px solid @gris-2;
+          border-bottom: 2px solid @gris-3;
+          width: 63%;
+          padding: 10px 5px;
+          background-color: white;
+          border-radius: 5px;
+          font-size: 18px;
+          float: left;
+
+          input {
+            width: 87%;
+            border: 0;
+            .font-regular() !important;
+          }
+        }
+
+        .btn-crear-equipo {
+          float: right;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: 13px;
+          padding-bottom: 13px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+.pub-plataformas {
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: @gris-4;
+
+  img {
+    opacity: .4;
+  }
+
+  .mensaje {
+    width: 240px;
+    float: left;
+    color: @negro-2;
+    margin-left: 25px;
+    margin-right: 5px;
+    font-size: 13px;
+    opacity: .7;
+    .font-light();
+  }
+
+  .mensaje-clientes {
+    width: 140px;
+    margin-left: 35px;
+  }
+
+  .plataformas {
+    float: left;
+    width: auto;
+    margin-top: 0px;
+
+    img {
+      height: 22px;
+      margin-left: 15px;
+    }
+
+    .img-instagram {
+      margin-top: 7px;
+      height: 26px;
+    }
+  }
+
+  .clientes {
+    width: 250px;
+    height: 40px;
+    margin-left: 10px;
+    float: left;
+    background: url(../images/marcas.png) no-repeat left center;
+    opacity: .5;
+  }
+}
+
+.pub-perfiles {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  .pub-inner {
+    .perfiles {
+width: 65%;
+    height: 260px;
+    background: #fff;
+    float: left;
+    border: 1px solid #ccc;
+    border-bottom: 3px solid #ccc;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: url(../images/perfiles.png) no-repeat 15px 50px;
+    background-size: 680px;
+    /* backface-visibility: visible; */
+
+      .title {
+        text-align: center;
+        width: 100%;
+        margin-top: 20px;
+        opacity: .8;
       }
     }
   }

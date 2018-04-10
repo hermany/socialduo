@@ -4,16 +4,44 @@
 @border-btn: 5px;
 
 
+@font-face {
+    font-family: 'made_evolve_sansbold';
+    src: url('../font/made_evolve_sans_bold_personal_use-webfont.woff2') format('woff2'),
+         url('../font/made_evolve_sans_bold_personal_use-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'made_evolve_sans_evolight';
+    src: url('../font/made_evolve_sans_light_evo_personal_use-webfont.woff2') format('woff2'),
+         url('../font/made_evolve_sans_light_evo_personal_use-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+@font-face {
+    font-family: 'made_evolve_sans_evolight';
+    src: url('../font/made_evolve_sans_regular_personal_use-webfont.woff2') format('woff2'),
+         url('../font/made_evolve_sans_regular_personal_use-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .font-regular() {
-  font-family: 'Abel', sans-serif;
+  font-family: 'made_evolve_sans_evolight';
 }
 
 .font-light() {
-  font-family: "StagSans-light", arial, serif;
+  font-family: 'made_evolve_sans_evolight';
 }
 
 .font-bold() {
-  font-family: "StagSans-regular", arial, serif;
+  font-family: 'made_evolve_sansbold';
 }
 
 .border(@x) {
@@ -38,6 +66,7 @@ body {
   font-size: 14px;
   margin: 0;
   padding: 0;
+  letter-spacing: 0.2pt;
 }
 
 ul,
@@ -65,6 +94,13 @@ li {
   float: left;
 }
 
+a{
+  transition: all ease .3s;
+  &:hover{
+    transition: all ease .3s;
+  }
+}
+
 .btn {
   background: #fbfcfd;
   color: #777;
@@ -73,14 +109,20 @@ li {
   //background-color: #2b88d9;
   //border: none;
   //color: #fff;
-  padding: 7px 11px;
+  // padding: 7px 11px;
   -webkit-border-radius: @border-btn;
   border-radius: @border-btn; 
   // margin-right: 10px;
   // margin-top: 10px;
   text-decoration: none;
-  font-size: 14px; 
-  // font-weight: 700;
+    padding: 10px 15px 9px 15px;
+    display: inline-block;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .15em;
+
+ 
   position: relative;
   cursor: pointer;
   -webkit-user-select: none;
@@ -95,10 +137,26 @@ li {
 }
 
 .btn-info {
-  background-color: @azul-2;
-  color: #fbfbfb;
+  background-color: @celeste;
+  color: @blanco;
+
+  &:hover {
+    background-color: @azul !important;
+    color: @blanco;
+  }
 }
 
+.btn-success {
+  background:@verde;
+  border-bottom: 2px solid @verde-1;
+  color: @blanco;
+
+  &:hover {
+    background-color: @verde-1 !important;
+    border-bottom: 2px solid @verde-2 !important;
+    color: @blanco;
+  }
+}
 .btn-full {
   background: transparent !important;
   border: 1px solid @gris-2;
@@ -144,4 +202,31 @@ li {
 
 .icon-instagram {
   color: #EA0031;
+}
+
+
+/* WebKit */
+
+ :-moz-placeholder {
+  color: @gris-2;
+}
+
+ ::-webkit-input-placeholder {
+  color: @gris-2;
+}
+
+ ::-moz-placeholder {
+  color: @gris-2;
+}
+
+ :-ms-input-placeholder {
+  color: @gris-2;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+input:focus {
+  outline: none;
 }
