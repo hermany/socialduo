@@ -3,8 +3,6 @@ header("Content-Type: text/html;charset=utf-8");
 require_once(_RUTA_NUCLEO."clases/class-constructor.php");
 $fmt = new CONSTRUCTOR;
 $img_bg = $fmt->class_multimedia->multimedia_cat_last("1");
-
-
 ?>
 <section class="pub-presentacion" style="background:url(<?php echo $img_bg; ?>) no-repeat center center">
 		<div class="pub-inner container">
@@ -47,5 +45,15 @@ $img_bg = $fmt->class_multimedia->multimedia_cat_last("1");
 			</label>
 		</div>
 		<div class="mensaje"></div>
+		<div class="video-cmfn">
+			<div class="inner">
+				<video id="video" playsinline="" webkit-playsinline="" loop="" autoplay="" muted="" class="autoplaying fullscreen-bg__video">
+					<source src="https://shemeansbusiness.fb.com/wp-content/uploads/2018/02/facebook-shemeansbusiness-banner-video1.mp4" type="video/mp4">
+					<source src="https://shemeansbusiness.fb.com/wp-content/uploads/2018/02/facebook-shemeansbusiness-banner-video1.ogv" type="video/ogv">
+					<source src="https://shemeansbusiness.fb.com/wp-content/uploads/2018/02/facebook-shemeansbusiness-banner-video1.webm" type="video/webm">
+					Your browser does not support the video tag.
+				</video>
+			</div>
+		</div>
 	</div>
 </section>
